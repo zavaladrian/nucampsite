@@ -3,15 +3,19 @@ import { Col, Row } from "reactstrap";
 import AnimatedDisplayCard from "./AnimatedDisplayCard";
 import { selectFeaturedCampsite } from "../campsites/campsitesSlice";
 import { selectedFeaturedPromotion } from "../promotion/promotionsSlice";
-import { selectFeaturedPartners } from "../partners/partnersSlice";
+import { selectFeaturedPartner } from "../partners/partnersSlice";
+import { useSelector } from "react-redux";
 
 
 const DisplayList = () => {
-  const items = [
-    selectFeaturedCampsite(),
-    selectedFeaturedPromotion(),
-    selectFeaturedPartners(),
-  ];
+  
+  const items = useSelector((state) => [
+    selectFeaturedCampsite(state),
+    selectedFeaturedPromotion(state),
+    selectFeaturedPartner(state)
+]);
+
+console.log('display items:', items);
 
   return (
     <Row>
