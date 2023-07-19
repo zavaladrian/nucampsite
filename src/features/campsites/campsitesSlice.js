@@ -25,8 +25,3 @@ export const selectCampsiteById = (id) => (state) => {
 export const selectFeaturedCampsite = (state) => {
     return state.campsites.campsitesArray.find((campsite) => campsite.featured);
 };
-
-//randomizer
-// export const selectRandomCampsite = () => {
-//     return CAMPSITES[Math.floor(CAMPSITES.length * Math.random())];
-// };
